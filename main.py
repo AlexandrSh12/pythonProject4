@@ -1,16 +1,16 @@
-# This is a sample Python script.
+from fastapi import FastAPI
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+app = FastAPI()
 
+@app.get("/")
+def read_root():
+    return {"data": "ФИО: Шаповалов Александр Иванович"}
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+@app.get("/users")
+def read_users():
+    return {"data": "Контактные данные: 8-800-555-3535, улица Герцена 94"}
 
+@app.get("/tools")
+def read_tools():
+    return {"data": "Навыки разработчика: Haskel, C#, C, SQL..."}
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm2')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
